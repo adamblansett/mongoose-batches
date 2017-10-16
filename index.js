@@ -42,7 +42,7 @@ module.exports = function (schema) {
           }
 
           if (documentsRemaining > 0) {
-            query.skip(count - documentsRemaining).limit(opts.batchSize).select(opts.select || '').exec(function (err, docs) {
+            query.skip(count - documentsRemaining).limit(opts.batchSize).select(opts.select || '').sort(opts.sort | '').exec(function (err, docs) {
               documentsRemaining += -1 * ((docs && docs.length) || opts.batchSize);
               batchHandler(err, docs, processBatch, count, documentsRemaining);
             });
