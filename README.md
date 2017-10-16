@@ -1,7 +1,3 @@
-# Purpose of Forking
-
-Add way to sort.
-
 # Mongoose Find In Batches
 
 
@@ -57,6 +53,9 @@ var options = {
         name : 1,
         email : 1,
         phone : 1
+    },
+    sort : {
+        name : -1
     }
 };
 ```
